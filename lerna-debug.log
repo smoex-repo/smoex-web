@@ -1,0 +1,16 @@
+0 silly argv { _: [ 'create' ],
+0 silly argv   lernaVersion: '3.20.2',
+0 silly argv   '$0': '/Users/bilibili/.node_global/bin/lerna',
+0 silly argv   name: 'smoex-common-web' }
+1 notice cli v3.20.2
+2 verbose rootPath /Users/bilibili/Desktop/smoex/smoex-web
+3 info versioning independent
+4 error Error: Command failed: git config --get user.email
+4 error
+4 error
+4 error     at makeError (/Users/bilibili/.node_global/lib/node_modules/lerna/node_modules/execa/index.js:174:9)
+4 error     at Function.module.exports.sync (/Users/bilibili/.node_global/lib/node_modules/lerna/node_modules/execa/index.js:338:15)
+4 error     at Object.execSync (/Users/bilibili/.node_global/lib/node_modules/lerna/node_modules/@lerna/child-process/index.js:26:16)
+4 error     at CreateCommand.gitConfig (/Users/bilibili/.node_global/lib/node_modules/lerna/node_modules/@lerna/create/index.js:181:34)
+4 error     at CreateCommand.initialize (/Users/bilibili/.node_global/lib/node_modules/lerna/node_modules/@lerna/create/index.js:107:47)
+4 error     at Promise.resolve.then (/Users/bilibili/.node_global/lib/node_modules/lerna/node_modules/@lerna/command/index.js:272:24)
