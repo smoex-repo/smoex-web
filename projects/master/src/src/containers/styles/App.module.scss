@@ -1,0 +1,65 @@
+@import '../../lib/core-dom.scss';
+
+$header-height: 48px;
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid gray;
+}
+
+.header-wrapper {
+  @include l-flex(row, center, space-between);
+  @include l-container();
+  @include c-size(x, $header-height);
+  padding: 0 16px;
+}
+
+.header-logo {
+  @include btn-label(0 15px, $header-height);
+  @include btn--disabled();
+}
+
+.header-profile {
+  @include l-flex(row, center);
+}
+
+.nav-item {
+  @include btn-label(0 15px, $header-height);
+}
+.nav-visitor {
+  cursor: default;
+}
+.to-login {
+  @include text-link(x);
+}
+.to-register {
+  @include text-link(x);
+  margin-left: 5px;
+}
+
+.bubble {
+  @include bubble();
+  @include bubble__panel(bubble-wrapper) {
+    padding-top: 10px;
+  }
+  @include bubble__panel--hover(bubble-wrapper) {
+    padding-top: 5px;
+  }
+}
+.profile-panel {
+  background-color: $white;
+  padding: 16px;
+  box-shadow: 0 1px 4px #ccc;
+}
+
+.profile-link-wrapper {
+  @include l-flex(column, x);
+}
+
+.profile-link {
+  @include text-link(x);
+  margin-bottom: 10px;
+}
+.profile-logout {
+  @include text-link(x);
+}

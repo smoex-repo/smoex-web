@@ -1,0 +1,5 @@
+aliyun:
+  oss: 
+    bucket: smoex-public
+    package: master-web
+    endpoint: https://public.smoex.com

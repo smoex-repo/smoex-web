@@ -1,0 +1,64 @@
+@mixin l-position($position, $values) {
+  $top: nth($values, 1);
+  $right: nth($values, 2);
+  $bottom: nth($values, 3);
+  $left: nth($values, 4);
+  @include h-property(position, $position);
+  @include h-property(top, $top);
+  @include h-property(right, $right);
+  @include h-property(bottom, $bottom);
+  @include h-property(left, $left);
+}
+
+@mixin l-flex($direction, $v-align, $h-align: $v-align) {
+  display: flex;
+  flex-wrap: wrap;
+  @include h-property(flex-direction, $direction);
+  @if $direction == row {
+    @include h-property(justify-content, $h-align);
+    @include h-property(align-items, $v-align);
+  }
+  @if $direction == column {
+    @include h-property(align-items, $h-align);
+    @include h-property(justify-content, $v-align);
+  }
+  @content;
+}
+
+@mixin l-absolute($v-align, $h-align: $v-align) {
+  position: absolute;
+  white-space: nowrap;
+  @if $v-align == start {
+    top: 0;
+  }
+  @if $h-align == start {
+    left: 0;
+  }
+  @if $v-align == end {
+    bottom: 0;
+  }
+  @if $h-align == end {
+    right: 0;
+  }
+  @if $v-align == center and $h-align != center {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $h-align == center and $v-align != center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $h-align == center and $v-align == center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @content;
+}
+
+@mixin l-container() {
+  @include h-width($container-width);
+  @include h-property(min-width, $container-min-width);
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,25 @@
+@mixin c-size($width, $height) {
+  @include h-property(width, $width);
+  @include h-property(height, $height);
+  @content;
+}
+
+@mixin c-color($text-color, $border-color: x, $bg-color: $border-color) {
+  @include h-property(color, $text-color);
+  @include h-property(border-color, $border-color);
+  @include h-property(background-color, $bg-color);
+  @content;
+}
+
+@mixin c-border($width, $radius) {
+  @include h-property(border-width, $width);
+  @include h-property(border-radius, $radius);
+  @content;
+}
+
+@mixin c-font($font-size, $font-weight: x, $line-height: x) {
+  @include h-property(font-size, $font-size);
+  @include h-property(font-weight, $font-weight);
+  @include h-property(line-height, $line-height);
+  @content;
+}
