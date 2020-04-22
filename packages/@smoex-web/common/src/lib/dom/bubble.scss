@@ -1,0 +1,23 @@
+@mixin bubble() {
+  position: relative;
+}
+
+@mixin bubble__panel($selector) {
+  .#{$selector} {
+    @include l-position(absolute, 100% x x 0);
+    transition: 0.3s all;
+    opacity: 0;
+    pointer-events: none;
+    @content;
+  }
+}
+
+@mixin bubble__panel--hover($selector, $offsetY: x) {
+  &:hover {
+    .#{$selector} {
+      opacity: 1;
+      pointer-events: all;
+      @content;
+    }
+  }
+}

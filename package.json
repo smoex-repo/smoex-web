@@ -1,11 +1,16 @@
 {
-  "name": "smoex-web",
+  "name": "smoex-frontend",
   "private": true,
   "workspaces": [
-    "packages/*",
+    "packages/@smoex-basic/*",
+    "packages/@smoex-cli/*",
+    "packages/@smoex-kit/*",
+    "packages/@smoex-web/*",
+    "packages/@smoex-mobile/*",
     "projects/*"
   ],
   "scripts": {
+    "master-web": "yarn workspace smoex-master-web start",
     "init": "yarn install && lerna bootstrap",
     "clean": "lerna clean -y && rm -rf node_modules",
     "clean:init": "npm run clean && npm run init"

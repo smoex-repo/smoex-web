@@ -1,0 +1,98 @@
+{
+  "name": "@smoex-web/common",
+  "version": "0.0.1",
+  "description": "smoex-common-web",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "start-storybook -p 3001",
+    "build": "webpack",
+    "compile": "antd-tools run compile",
+    "dist": "antd-tools run dist",
+    "build:prod": "npm run build && npm publish",
+    "upload": "smoex-scripts upload ./build",
+    "package": "npm run build && npm run upload && npm publish",
+    "format": "npm run format:tslint && npm run format:prettier",
+    "format:tslint": "tslint --fix --config ./tslint.json 'src/**/*.{ts,tsx}'",
+    "format:prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,scss}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smoex-frontend/smoex-common-web.git"
+  },
+  "keywords": [
+    "redux-async-kit",
+    "redux-async",
+    "redux"
+  ],
+  "author": "lynnkoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smoex-frontend/smoex-common-web/issues"
+  },
+  "homepage": "https://public.smoex.com/common-web",
+  "dependencies": {
+    "@smoex-basic/browser": "^0.0.1",
+    "@smoex-basic/js": "^0.0.1",
+    "@smoex-kit/redux": "^0.0.1",
+    "browser-basic-kit": "^0.0.2",
+    "js-basic-kit": "^0.0.4",
+    "react": "^16.11.0",
+    "react-dom": "^16.12.0",
+    "react-dom-basic-kit": "0.0.35",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "redux-async-kit": "^0.0.12",
+    "smoex-common-business": "^0.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/react": "^5.2.8",
+    "@svgr/webpack": "^5.0.1",
+    "@types/react-redux": "^7.1.5",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/vfile-message": "^2.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^9.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^5.0.2",
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.18.2",
+    "react-dev-utils": "^10.0.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "sass-loader": "^8.0.0",
+    "smoex-scripts": "^1.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,css,scss,json,html}": [
+      "npm run format",
+      "git add"
+    ],
+    "yarn.lock": [
+      "git rm --cached"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "@smoex-kit/scss",
+  "version": "0.0.1",
+  "description": "scss-basic-kit",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build:prod": "npm run build && npm publish",
+    "format": "npm run format:tslint && npm run format:prettier",
+    "format:tslint": "tslint --fix --config ./tslint.json 'src/**/*.{ts,tsx}'",
+    "format:prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,scss}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lynnkoo/scss-basic-kit.git"
+  },
+  "keywords": [
+    "scss-basic-kit"
+  ],
+  "author": "lynnkoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lynnkoo/scss-basic-kit/issues"
+  },
+  "homepage": "https://github.com/lynnkoo/scss-basic-kit#readme",
+  "devDependencies": {
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.0",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,css,scss,html}": [
+      "npm run format",
+      "git add"
+    ],
+    "yarn.lock": [
+      "git rm --cached"
+    ]
+  },
+  "gitHead": "20090c232fd0c9e032a185c14eaef7d224742bb2"
+}

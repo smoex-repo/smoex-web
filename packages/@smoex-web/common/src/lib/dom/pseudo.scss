@@ -1,0 +1,58 @@
+%pseudo-base {
+  content: '';
+  margin: auto;
+  display: block;
+}
+
+%clearfix {
+  &:after {
+    @extend %pseudo-base;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+%newline {
+  &:after {
+    content: '\A';
+    white-space: pre;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin p-rect($width, $height, $color, $pseudo: after) {
+  &::#{$pseudo} {
+    @extend %pseudo-base;
+    background-color: $color;
+    width: $width;
+    height: $height;
+    @content;
+  }
+}
+@mixin p-traingle($width, $height, $color, $pseudo: after) {
+  &::#{$pseudo} {
+    @extend %pseudo-base;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $height * 2 solid $color;
+    height: 0;
+    width: 0;
+    @content;
+  }
+}
+
+@mixin p-half-line($length, $pseudo: after) {
+  &::#{$pseudo} {
+    @extend %pseudo-base;
+    height: 1px;
+    width: $width;
+    background-image: linear-gradient(0deg, transparent 50%, #e4e4e4 50%);
+    @content;
+  }
+}

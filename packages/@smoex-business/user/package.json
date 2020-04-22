@@ -1,0 +1,78 @@
+{
+  "name": "@smoex-business/user",
+  "version": "0.0.1",
+  "description": "A simplify work flow for redux",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "webpack",
+    "build:prod": "npm run build && npm publish",
+    "format": "npm run format:tslint && npm run format:prettier",
+    "format:tslint": "tslint --fix --config ./tslint.json 'src/**/*.{ts,tsx}'",
+    "format:prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,scss}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lynnkoo/smoex-common-business.git"
+  },
+  "keywords": [
+    "redux-async-kit",
+    "redux-async",
+    "redux"
+  ],
+  "author": "lynnkoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lynnkoo/rsmoex-common-business/issues"
+  },
+  "homepage": "https://github.com/lynnkoo/smoex-common-business#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "qs": "^6.9.1",
+    "react": "^16.11.0",
+    "redux-async-kit": "^0.0.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/react": "^5.2.8",
+    "@types/axios": "^0.14.0",
+    "@types/node": "^12.7.8",
+    "@types/qs": "^6.9.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "husky": "^3.0.7",
+    "lint-staged": "^9.4.0",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.18.2",
+    "react-dev-utils": "^10.0.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "sass-loader": "^8.0.0",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "tslint": "^5.11.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,css,scss,json,html}": [
+      "npm run format",
+      "git add"
+    ],
+    "yarn.lock": [
+      "git rm --cached"
+    ]
+  }
+}
