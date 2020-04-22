@@ -6,7 +6,7 @@ import { accountAsyncAction, commonSlice } from 'smoex-common-business'
 import { Footer } from './Footer'
 import { PageError } from './PageError'
 import { PageLoading } from './PageLoading'
-import { useToastError } from 'react-dom-basic-kit'
+import { useToastError } from '@smoex-kit/react-dom'
 import { initInnerHeight, IS_WECHAT_WEBVIEW } from '@smoex-basic/browser'
 import { IPageContext, useInitPageContext } from './PageRouterContext'
 

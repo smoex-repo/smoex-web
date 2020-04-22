@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { AppContext } from '../containers/Container'
 import { transformStyles } from '../utils/style'
-import { IS_WINDOWS, IS_WECHAT_WEBVIEW } from '@bsk/browser'
+import { IS_WINDOWS, IS_WECHAT_WEBVIEW } from '@smoex-basic/browser'
 import { useLocation } from 'react-router-dom'
 
 export function useAppContext() {

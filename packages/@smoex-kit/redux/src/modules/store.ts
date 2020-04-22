@@ -10,7 +10,7 @@ import { asyncMiddleware } from './async'
 import { formatReducers } from './injector'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import loggerMiddleware from 'redux-logger'
-import { toArray } from '@bsk/js'
+import { toArray } from '@smoex-basic/js'
 
 type StoreInstance = Store & {
   asyncReducers: any

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Route, Link } from 'react-router-dom'
 import { configureStore } from 'redux-async-kit'
-import { Container } from 'react-dom-basic-kit'
+import { Container } from '@smoex-kit/react-dom'
 import { PageRouter, usePageContext } from '../containers/PageRouter'
 import { commonSlice } from 'smoex-common-business'
 import { Provider } from 'react-redux'

@@ -2,7 +2,7 @@
   "name": "@smoex-kit/react-dom",
   "version": "0.0.1",
   "description": "react dom basic kit",
-  "main": "lib/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "webpack",
@@ -28,7 +28,6 @@
   "homepage": "https://github.com/lynnkoo/react-dom-basic-kit#readme",
   "dependencies": {
     "@smoex-basic/browser": "^0.0.1",
-    "browser-basic-kit": "^0.0.3",
     "classnames": "^2.2.6",
     "immer": "^5.3.6",
     "react": "^16.11.0",

@@ -4,10 +4,10 @@ import {
   enhancePopupComponent,
   usePopupShown,
   Modal,
-} from 'react-dom-basic-kit'
-import { transformStyles } from 'react-dom-basic-kit'
+} from '@smoex-kit/react-dom'
+import { transformStyles } from '@smoex-kit/react-dom'
 import { DrawerModal } from './DrawerModal'
-import { asModalProps } from 'react-dom-basic-kit'
+import { asModalProps } from '@smoex-kit/react-dom'
 
 const cx = transformStyles(styles)
 

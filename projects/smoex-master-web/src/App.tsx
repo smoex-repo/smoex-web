@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Route } from 'react-router-dom'
 import { configureStore, useActionCallback } from 'redux-async-kit'
-import { Container } from 'react-dom-basic-kit'
+import { Container } from '@smoex-kit/react-dom'
 import { PageRouter, Footer } from '@smoex-web/common'
 import { commonSlice, accountAsyncAction } from 'smoex-common-business'
 import { Provider } from 'react-redux'

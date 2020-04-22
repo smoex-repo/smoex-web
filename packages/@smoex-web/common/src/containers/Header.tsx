@@ -7,7 +7,7 @@ import {
   useToggleModal,
   useModal,
   useToastError,
-} from 'react-dom-basic-kit'
+} from '@smoex-kit/react-dom'
 import {
   commonSlice,
   accountSelector,

@@ -33,9 +33,9 @@
   "dependencies": {
     "@smoex-basic/browser": "^0.0.1",
     "@smoex-basic/js": "^0.0.1",
+    "@smoex-kit/react-dom": "^0.0.1",
     "@smoex-kit/redux": "^0.0.1",
     "browser-basic-kit": "^0.0.2",
-    "js-basic-kit": "^0.0.4",
     "react": "^16.11.0",
     "react-dom": "^16.12.0",
     "react-dom-basic-kit": "0.0.35",

@@ -13600,7 +13600,7 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom-basic-kit@0.0.35, react-dom-basic-kit@^0.0.35:
+react-dom-basic-kit@0.0.35:
   version "0.0.35"
   resolved "https://registry.yarnpkg.com/react-dom-basic-kit/-/react-dom-basic-kit-0.0.35.tgz#6a21c2789256d050c112d6b423d4e3ff2757d2ef"
   integrity sha512-AFYOiFHaaJpBZGbh4tyn1JRYeI2J7LQzBob/kKoovWB2ZhhQuPlHEMeEYoB/1v8F2Ggg3Vpz/JPjFQ4m/rMivw==

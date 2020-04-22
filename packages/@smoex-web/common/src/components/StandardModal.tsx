@@ -6,8 +6,8 @@ import {
   usePopupLayerOverlay,
   asModalProps,
   Modal,
-} from 'react-dom-basic-kit'
-import { transformStyles } from 'react-dom-basic-kit'
+} from '@smoex-kit/react-dom'
+import { transformStyles } from '@smoex-kit/react-dom'
 import { Loading } from './Loading'
 
 const cx = transformStyles(styles)

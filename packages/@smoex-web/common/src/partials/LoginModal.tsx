@@ -7,8 +7,8 @@ import {
   useToggleToast,
   useFormContext,
   Input,
-} from 'react-dom-basic-kit'
-import { transformStyles } from 'react-dom-basic-kit'
+} from '@smoex-kit/react-dom'
+import { transformStyles } from '@smoex-kit/react-dom'
 // import { LoginForm } from './LoginForm'
 // import { RegisterForm } from './RegisterForm'
 import { ConfirmModal } from '../components/ConfirmModal'

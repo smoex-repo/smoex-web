@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { IS_QQ_WEBVIEW } from '@smoex-basic/browser'
 import styles from './styles/App.module.scss'
-import { transformStyles } from 'react-dom-basic-kit'
+import { transformStyles } from '@smoex-kit/react-dom'
 
 const cx = transformStyles(styles)
 

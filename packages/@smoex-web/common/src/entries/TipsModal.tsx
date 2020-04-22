@@ -6,7 +6,7 @@ import {
   asModalProps,
   transformStyles,
   Modal,
-} from 'react-dom-basic-kit'
+} from '@smoex-kit/react-dom'
 
 const cx = transformStyles(styles)
 

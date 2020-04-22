@@ -1,12 +1,12 @@
 import * as React from 'react'
 import styles from './styles/MenuModal.module.scss'
 import { DrawerModal } from '../components/DrawerModal'
-import { usePopupShown } from 'react-dom-basic-kit'
-import { transformStyles } from 'react-dom-basic-kit'
+import { usePopupShown } from '@smoex-kit/react-dom'
+import { transformStyles } from '@smoex-kit/react-dom'
 import { LoginModal } from './LoginModal'
 
-import { useToggleModal, asModalProps } from 'react-dom-basic-kit'
-import { useModal } from 'react-dom-basic-kit'
+import { useToggleModal, asModalProps } from '@smoex-kit/react-dom'
+import { useModal } from '@smoex-kit/react-dom'
 import { commonSlice, accountAsyncAction } from 'smoex-common-business'
 import { Link, NavLink } from 'react-router-dom'
 

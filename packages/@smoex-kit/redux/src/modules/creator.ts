@@ -3,7 +3,7 @@ import { injectReducers } from './injector'
 import produce from 'immer'
 import cloneDeep from 'lodash/cloneDeep'
 import { useScopedAction, useScopedSelector, usePreviousForNull } from './hooks'
-import { toArray } from '@bsk/js'
+import { toArray } from '@smoex-basic/js'
 
 export function createLazyComponent(opts: any) {
   const { loader, injector } = opts

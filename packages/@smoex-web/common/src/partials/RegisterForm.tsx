@@ -6,9 +6,9 @@ import {
   useToggleToast,
   useToastError,
   useModal,
-} from 'react-dom-basic-kit'
-import { transformStyles, useFormContext } from 'react-dom-basic-kit'
-import { enhanceFormComponent } from 'react-dom-basic-kit'
+} from '@smoex-kit/react-dom'
+import { transformStyles, useFormContext } from '@smoex-kit/react-dom'
+import { enhanceFormComponent } from '@smoex-kit/react-dom'
 import { useAsyncCallback, useCurrentCallback } from 'redux-async-kit'
 import { accountAsyncAction, commonSlice } from 'smoex-common-business'
 import { LoginFormInput } from './LoginModal'
