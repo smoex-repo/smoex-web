@@ -11,3 +11,5 @@ export * from './logics/ContainerHooks'
 export * from './logics/ModalLayerHooks'
 export * from './utils/react'
 export * from './utils/style'
+export * from './hooks/trace'
+
