@@ -13,6 +13,7 @@
     "build": "lerna run --stream --sort build",
     "build:prod": "npm run clean:cache && npm run build",
     "build:pub": "npm run build:prod && lerna publish",
+    "upload": "lerna run --stream --sort upload",
     "clean": "lerna clean -y && npm run clean:cache",
     "clean:cache": "lerna exec --parallel -- rimraf .tsbuildcache lib",
     "clean:init": "npm run clean && npm run init",
