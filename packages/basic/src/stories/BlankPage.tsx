@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Route, Link } from 'react-router-dom'
 import { configureStore } from 'redux-async-kit'
 import { AppContainer } from 'react-dom-basic-kit'
-import { PageRouter, usePageContext } from '../containers/PageRouter'
+import { PageContainer, usePageContext } from '../index'
 import { userSlice } from '@smoex-business/user'
 import { Provider } from 'react-redux'
 // import { homeSlice } from 'common/slices/home'
@@ -10,7 +10,7 @@ import { createLazyComponent } from 'redux-async-kit'
 import { PageLoading } from '../containers/PageLoading'
 
 const store = configureStore({
-  injector: userSlice.injector,
+  injector: [userSlice.injector],
 })
 
 // window['store'] = store
@@ -39,13 +39,9 @@ const TestPage = () => {
 
 export const BlankPage: React.FC = () => {
   return (
-    <Provider store={store}>
-      <AppContainer>
-        <PageRouter>
-          <Route path="/test" component={TestPage} />
-          <Route path="/" component={HomePage} />
-        </PageRouter>
-      </AppContainer>
-    </Provider>
+    <PageContainer>
+      <Route path="/test" component={TestPage} />
+      <Route path="/" component={HomePage} />
+    </PageContainer>
   )
 }

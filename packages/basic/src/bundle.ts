@@ -2,7 +2,6 @@ import './index.scss'
 
 export * from './containers/Header'
 export * from './containers/Footer'
-export * from './containers/Controller'
 export * from './containers/PageError'
 export * from './containers/PageLoading'
 export * from './containers/PageRouter'

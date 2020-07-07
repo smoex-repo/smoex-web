@@ -9,13 +9,51 @@ import { PageLoading } from './PageLoading'
 import { useToastError, AppContainer } from 'react-dom-basic-kit'
 import { initInnerHeight, IS_WECHAT_WEBVIEW } from 'basic-kit-browser'
 import { IPageContext, useInitPageContext } from './PageRouterContext'
+import { Provider } from 'react-redux'
+import { configureStore } from 'redux-async-kit'
 
 const PageContext = React.createContext({} as IPageContext)
 export function usePageContext() {
   return React.useContext(PageContext)
 }
 
-export function usePageInit(page: IPageContext) {
+const PageRouter: React.FC<any> = (props) => {
+  const { children } = props
+  const pageContext = useInitPageContext()
+  const { showHeader, showFooter } = pageContext
+  const error = usePageInit(pageContext)
+  useToastError(error)
+
+  return (
+    <PageContext.Provider value={pageContext}>
+      {showHeader && <Header />}
+      <React.Suspense fallback={<PageLoading />}>
+        <Switch>
+          {false ? <PageError code={500} /> : children}
+          <Route render={() => <PageError code={404} />} />
+        </Switch>
+        {showFooter && <Footer />}
+      </React.Suspense>
+    </PageContext.Provider>
+  )
+}
+
+const store = configureStore({
+  injector: userSlice.injector,
+})
+
+export const PageContainer: React.FC = (props) => {
+  return (
+    <Provider store={store}>
+      <AppContainer>
+        <PageRouter>{props.children}</PageRouter>
+      </AppContainer>
+    </Provider>
+  )
+}
+export default PageContainer
+
+function usePageInit(page: IPageContext) {
   const [getInfo, infoState] = userSlice.useAction(accountAsyncAction.getInfo)
   const { pathname } = useLocation()
 
@@ -48,33 +86,3 @@ export function usePageInit(page: IPageContext) {
   }, [pathname])
   return infoState.error
 }
-
-export const PageRouter: React.FC<any> = (props) => {
-  const { children } = props
-  const pageContext = useInitPageContext()
-  const { showHeader, showFooter } = pageContext
-  const error = usePageInit(pageContext)
-  useToastError(error)
-
-  return (
-    <PageContext.Provider value={pageContext}>
-      {showHeader && <Header />}
-      <React.Suspense fallback={<PageLoading />}>
-        <Switch>
-          {false ? <PageError code={500} /> : children}
-          <Route render={() => <PageError code={404} />} />
-        </Switch>
-        {showFooter && <Footer />}
-      </React.Suspense>
-    </PageContext.Provider>
-  )
-}
-
-const PageContainer: React.FC = (props) => {
-  return (
-    <AppContainer>
-      <PageRouter>{props.children}</PageRouter>
-    </AppContainer>
-  )
-}
-export default PageContainer

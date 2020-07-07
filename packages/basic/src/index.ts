@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export * from './containers/PageRouterContext'
+export * from './containers/PageRouter'
 
 export const Header = React.lazy(() =>
   import('./containers/Header' /* webpackChunkName: "common" */),
@@ -8,17 +8,12 @@ export const Header = React.lazy(() =>
 export const Footer = React.lazy(() =>
   import('./containers/Footer' /* webpackChunkName: "common" */),
 )
-export const Controller = React.lazy(() =>
-  import('./containers/Controller' /* webpackChunkName: "common" */),
-)
+
 export const PageError = React.lazy(() =>
   import('./containers/PageError' /* webpackChunkName: "common" */),
 )
 export const PageLoading = React.lazy(() =>
   import('./containers/PageLoading' /* webpackChunkName: "common" */),
-)
-export const PageRouter = React.lazy(() =>
-  import('./containers/PageRouter' /* webpackChunkName: "common" */),
 )
 
 export const Loading = React.lazy(() =>
