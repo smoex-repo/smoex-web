@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom'
 import styles from './styles/App.module.scss'
 import { useThemeStyles, useModal, useToastError } from 'react-dom-basic-kit'
 import {
-  commonSlice,
+  userSlice,
   accountSelector,
   accountAsyncAction,
 } from '@smoex-business/user'
@@ -23,7 +23,7 @@ const mockLinks = [
 
 const ProfilePanel: React.FC = () => {
   const cx = useStyle()
-  const [logout, logoutState] = commonSlice.useAction(accountAsyncAction.logout)
+  const [logout, logoutState] = userSlice.useAction(accountAsyncAction.logout)
   const onLogout = () => {
     logout()
   }
@@ -57,7 +57,7 @@ const Bubble: React.FC<any> = (props) => {
 
 const Profile: React.FC<any> = () => {
   const cx = useStyle()
-  const [account] = commonSlice.useSelector(accountSelector.info)
+  const [account] = userSlice.useSelector(accountSelector.info)
   const modal = useModal((mProps: any) => (
     <LoginModal {...mProps}>{`test`}</LoginModal>
   ))

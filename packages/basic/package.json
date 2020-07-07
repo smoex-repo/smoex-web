@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/smoex-frontend/smoex-common-web#readme",
   "dependencies": {
-    "@smoex-business/user": "^0.0.4",
+    "@smoex-business/user": "^0.0.5",
     "basic-kit-browser": "^0.0.2",
     "basic-kit-js": "^0.0.3",
     "react": "^16.11.0",

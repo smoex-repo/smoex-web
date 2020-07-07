@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { Header } from './Header'
 import { useAsyncCallback } from 'redux-async-kit'
-import { accountAsyncAction, commonSlice } from '@smoex-business/user'
+import { accountAsyncAction, userSlice } from '@smoex-business/user'
 import { Footer } from './Footer'
 import { PageError } from './PageError'
 import { PageLoading } from './PageLoading'
@@ -16,7 +16,7 @@ export function usePageContext() {
 }
 
 export function usePageInit(page: IPageContext) {
-  const [getInfo, infoState] = commonSlice.useAction(accountAsyncAction.getInfo)
+  const [getInfo, infoState] = userSlice.useAction(accountAsyncAction.getInfo)
   const { pathname } = useLocation()
 
   const onGetInfo = useAsyncCallback(async () => {

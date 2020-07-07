@@ -6,17 +6,17 @@ import { transformStyles } from 'react-dom-basic-kit'
 import { LoginModal } from './LoginModal'
 
 import { useModal } from 'react-dom-basic-kit'
-import { commonSlice, accountAsyncAction } from '@smoex-business/user'
+import { userSlice, accountAsyncAction } from '@smoex-business/user'
 import { Link, NavLink } from 'react-router-dom'
 
 const cx = transformStyles(styles)
 
 const AccountIntro = (props: any) => {
   const { showLogin, onCloseModal } = props
-  const [account = {}] = commonSlice.useSelector(
+  const [account = {}] = userSlice.useSelector(
     (state: any) => state.account.payload,
   )
-  const [logout] = commonSlice.useAction(accountAsyncAction.logout)
+  const [logout] = userSlice.useAction(accountAsyncAction.logout)
   const onAvatarClick = React.useCallback(() => {
     if (account.group === 'visitor') {
       showLogin()

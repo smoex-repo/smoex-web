@@ -5,7 +5,7 @@ import { useToastError, useFormContext } from 'react-dom-basic-kit'
 import { transformStyles } from 'react-dom-basic-kit'
 import { enhanceFormComponent } from 'react-dom-basic-kit'
 import { useAsyncCallback } from 'redux-async-kit'
-import { accountAsyncAction, commonSlice } from '@smoex-business/user'
+import { accountAsyncAction, userSlice } from '@smoex-business/user'
 import { LoginFormInput } from '././LoginModal'
 
 const cx = transformStyles(styles)
@@ -15,11 +15,9 @@ const TLoginForm: React.FC<any> = (props) => {
   const { data, update } = useFormContext()
   const [loginType, setLoginType] = React.useState('password')
 
-  const [login, loginState] = commonSlice.useAction(accountAsyncAction.login)
-  const [sendCode, sendState] = commonSlice.useAction(
-    accountAsyncAction.sendCode,
-  )
-  const [verify, verifyState] = commonSlice.useAction(
+  const [login, loginState] = userSlice.useAction(accountAsyncAction.login)
+  const [sendCode, sendState] = userSlice.useAction(accountAsyncAction.sendCode)
+  const [verify, verifyState] = userSlice.useAction(
     accountAsyncAction.verifyCode,
   )
   const loading = loginState.loading || sendState.loading

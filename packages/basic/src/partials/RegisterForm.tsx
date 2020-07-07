@@ -5,7 +5,7 @@ import { useToggleToast, useToastError, useModal } from 'react-dom-basic-kit'
 import { transformStyles, useFormContext } from 'react-dom-basic-kit'
 import { enhanceFormComponent } from 'react-dom-basic-kit'
 import { useAsyncCallback, useCurrentCallback } from 'redux-async-kit'
-import { accountAsyncAction, commonSlice } from '@smoex-business/user'
+import { accountAsyncAction, userSlice } from '@smoex-business/user'
 import { LoginFormInput } from './LoginModal'
 import { ConfirmModal } from '../components/ConfirmModal'
 
@@ -24,15 +24,11 @@ const TRegisterForm: React.FC<any> = (props) => {
     </ConfirmModal>
   ))
 
-  const [sendCode, sendState] = commonSlice.useAction(
-    accountAsyncAction.sendCode,
-  )
-  const [verify, verifyState] = commonSlice.useAction(
+  const [sendCode, sendState] = userSlice.useAction(accountAsyncAction.sendCode)
+  const [verify, verifyState] = userSlice.useAction(
     accountAsyncAction.verifyCode,
   )
-  const [account] = commonSlice.useSelector(
-    (state: any) => state.account.payload,
-  )
+  const [account] = userSlice.useSelector((state: any) => state.account.payload)
 
   const onRegistered = useCurrentCallback(() => {
     if (account.group === 'member') {

@@ -2385,22 +2385,22 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@smoex-business/basic@^0.0.4":
-  version "0.0.4"
-  resolved "https://npm.pkg.github.com/download/@smoex-business/basic/0.0.4/aeb1103b2f3081cb1a039952a40f79594ab3ff4a8c7afff6ccce04e545a7ee98#562b63386a7fd72c2b0d37b0c79c8b6519f85ac6"
-  integrity sha512-KJj32Ym7UOG/vjmptmBF/MuLWJ4cAkYV1GK9YAE5elcDmaGmijMrwfynx89lfzBcg0W4kOsoGekuvbHKKIlGUg==
+"@smoex-business/basic@^0.0.5":
+  version "0.0.5"
+  resolved "https://npm.pkg.github.com/download/@smoex-business/basic/0.0.5/67ef6e484f32b11dc349c583b2d2bba8e0884ffae838efe1b636dbaf882ab137#7bda7173b77c2895c29148cefe8f10d4ad6293ee"
+  integrity sha512-5YMKvGEwlCX4mLo++CpJ6PB6gcTaeLTriqkB7cFByHGfN3l+Msu05j0qhiFSdq/isxN0xxQCzAGYH15+2vis4Q==
   dependencies:
     axios "^0.19.2"
     basic-kit-js "^0.0.3"
     qs "^6.9.4"
     redux-async-kit "^0.0.16"
 
-"@smoex-business/user@^0.0.4":
-  version "0.0.4"
-  resolved "https://npm.pkg.github.com/download/@smoex-business/user/0.0.4/6c22d78177f02f8a5a3936e1a751e35f22c20d4ed8305fe66fd939d821196f30#d6df5094771ae6a37fe9cbfd9f80d28d649c5bf3"
-  integrity sha512-J4eTdISzApUmyl/IyKheIfmRHE38inmHXjfmm5KyvnMwc9psUV5yLm5gEFo7oEpgEevokf2C9gKLOxHwV2h4tw==
+"@smoex-business/user@^0.0.5":
+  version "0.0.5"
+  resolved "https://npm.pkg.github.com/download/@smoex-business/user/0.0.5/a3754b90a2eb5979ea5e10eac4f4ea946df6346275657fe49aabc6ca8a6f3512#3a1c308f06583e66b45a05c6e5c2867835bda8b6"
+  integrity sha512-bWpYEuuTww/Towl9TtHuhbT4cKh1dF9sQ7mQCEymj5n9h5O+KfOc4GGDVtPhycU04qetz02kSoC3zbsU0YDDJg==
   dependencies:
-    "@smoex-business/basic" "^0.0.4"
+    "@smoex-business/basic" "^0.0.5"
     "@types/react-redux" "^7.1.9"
     axios "^0.19.0"
     qs "^6.9.1"
