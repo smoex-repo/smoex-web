@@ -1,8 +1,6 @@
 import * as React from 'react'
 import { createReducer, IReducerMap } from 'react-dom-basic-kit'
 
-export const PageContext = React.createContext<any>(null)
-
 type IPageState = {
   showHeader: boolean
   showFooter: boolean

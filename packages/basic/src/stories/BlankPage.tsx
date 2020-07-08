@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Route, Link } from 'react-router-dom'
 import { configureStore } from 'redux-async-kit'
 import { AppContainer } from 'react-dom-basic-kit'
-import { PageContainer, usePageContext } from '../index'
+import { PageContainer } from '../index'
 import { userSlice } from '@smoex-business/user'
 import { Provider } from 'react-redux'
 // import { homeSlice } from 'common/slices/home'
@@ -25,9 +25,9 @@ const HomePage = () => {
 }
 
 const TestPage = () => {
-  const { update } = usePageContext()
+  // const { update } = usePageContext()
   React.useEffect(() => {
-    update({ showFooter: false })
+    // update({ showFooter: false })
   }, [])
   return (
     <section>
