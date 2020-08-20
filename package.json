@@ -1,5 +1,5 @@
 {
-  "name": "smoex-mobile",
+  "name": "smoex-web",
   "private": true,
   "workspaces": [
     "packages/*"

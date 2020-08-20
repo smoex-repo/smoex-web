@@ -8,11 +8,14 @@ const PageRouter = React.lazy(() =>
   import('./PageRouter' /* webpackChunkName: "common" */),
 )
 
-const store = configureStore({
+// @ts-ignore
+const initialState = typeof window === 'undefined' ? undefined : window.__PRELOAD_STATE__
+
+export const store = configureStore({
     injector: userSlice.injector,
-})
+}, initialState)
   
-export const PageContainer: React.FC = (props) => {
+export const Container: React.FC = (props) => {
     return (
         <React.Suspense fallback={null}>
             <Provider store={store}>

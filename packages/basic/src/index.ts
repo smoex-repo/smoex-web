@@ -1,7 +1,28 @@
 import * as React from 'react'
+// @ts-ignore
+import * as ReactDOM from 'react-dom'
 
 // export * from './containers/PageRouterContext'
-export * from './containers/PageContainer'
+export * from './containers/Container'
+import { serviceWorker } from 'react-dom-basic-kit'
+import { initWindowWidth } from 'basic-kit-browser'
+
+const initial = (opts?: any) => {
+  initWindowWidth()
+}
+
+const render = (...params: any[]) => {
+  const isomorphic = process.env.NODE_ENV === 'production' && process.env.REACT_APP_ISOMORPHIC === 'yes'
+  const renderDOM = isomorphic ? ReactDOM.hydrate : ReactDOM.render
+  renderDOM(...params)
+}
+
+export const starter = {
+  initial, 
+  render,
+  register: serviceWorker.register,
+  unregister: serviceWorker.unregister,
+}
 
 export const Header = React.lazy(() =>
   import('./containers/Header' /* webpackChunkName: "common" */),
