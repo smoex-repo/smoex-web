@@ -2,12 +2,12 @@ import * as React from 'react'
 import '../index.scss' // TODO: 全局 scss 的引入暂时放在 Header
 import { NavLink, Link } from 'react-router-dom'
 import styles from './styles/App.module.scss'
-import { useThemeStyles, useModal, useToastError } from 'react-dom-basic-kit'
+import { useThemeStyles, useModal, useToastError } from '@react-kits/dom'
 import {
   userSlice,
   accountSelector,
   accountAsyncAction,
-} from '@smoex-business/user'
+} from '@smoex-logic/user'
 import { LoginModal } from '../partials/LoginModal'
 const useStyle = () => useThemeStyles(styles)
 

@@ -1,11 +1,10 @@
 import * as React from 'react'
-// @ts-ignore
 import * as ReactDOM from 'react-dom'
 
 // export * from './containers/PageRouterContext'
-export * from './containers/Container'
-import { serviceWorker } from 'react-dom-basic-kit'
-import { initWindowWidth } from 'basic-kit-browser'
+export * from './containers/PageContainer'
+import { serviceWorker } from '@react-kits/dom'
+import { initWindowWidth } from '@basic-kits/dom'
 
 const initial = (opts?: any) => {
   initWindowWidth()
@@ -14,6 +13,7 @@ const initial = (opts?: any) => {
 const render = (...params: any[]) => {
   const isomorphic = process.env.NODE_ENV === 'production' && process.env.REACT_APP_ISOMORPHIC === 'yes'
   const renderDOM = isomorphic ? ReactDOM.hydrate : ReactDOM.render
+  // @ts-ignore
   renderDOM(...params)
 }
 

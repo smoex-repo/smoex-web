@@ -6,8 +6,8 @@ import {
   useModalStatus,
   useModalClose,
   Modal,
-} from 'react-dom-basic-kit'
-import { transformStyles } from 'react-dom-basic-kit'
+  transformStyles,
+} from '@react-kits/dom'
 import { Loading } from './Loading'
 
 const cx = transformStyles(styles)

@@ -1,9 +1,8 @@
 import * as React from 'react'
 import { Route, Link } from 'react-router-dom'
-import { configureStore } from 'redux-async-kit'
-import { AppContainer } from 'react-dom-basic-kit'
-import { Container } from '../index'
-import { userSlice } from '@smoex-business/user'
+import { configureStore } from '@react-kits/redux'
+import { PageContainer } from '../index'
+import { userSlice } from '@smoex-logic/user'
 import { Provider } from 'react-redux'
 // import { homeSlice } from 'common/slices/home'
 import { PageLoading } from '../containers/PageLoading'
@@ -38,9 +37,9 @@ const TestPage = () => {
 
 export const BlankPage: React.FC = () => {
   return (
-    <Container>
+    <PageContainer>
       <Route path="/test" component={TestPage} />
       <Route path="/" component={HomePage} />
-    </Container>
+    </PageContainer>
   )
 }

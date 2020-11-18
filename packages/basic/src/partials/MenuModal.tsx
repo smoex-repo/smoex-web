@@ -1,12 +1,10 @@
 import * as React from 'react'
 import styles from './styles/MenuModal.module.scss'
 import { DrawerModal } from '../components/DrawerModal'
-import { usePopupShown } from 'react-dom-basic-kit'
-import { transformStyles } from 'react-dom-basic-kit'
+import { usePopupShown, transformStyles, useModal } from '@react-kits/dom'
 import { LoginModal } from './LoginModal'
 
-import { useModal } from 'react-dom-basic-kit'
-import { userSlice, accountAsyncAction } from '@smoex-business/user'
+import { userSlice, accountAsyncAction } from '@smoex-logic/user'
 import { Link, NavLink } from 'react-router-dom'
 
 const cx = transformStyles(styles)

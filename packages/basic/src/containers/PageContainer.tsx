@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { userSlice } from '@smoex-business/user'
-import { AppContainer } from 'react-dom-basic-kit'
+import { userSlice } from '@smoex-logic/user'
+import { AppContainer } from '@react-kits/dom'
 import { Provider } from 'react-redux'
-import { configureStore } from 'redux-async-kit'
+import { configureStore } from '@react-kits/redux'
 
 const PageRouter = React.lazy(() =>
   import('./PageRouter' /* webpackChunkName: "common" */),
@@ -15,12 +15,15 @@ export const store = configureStore({
     injector: userSlice.injector,
 }, initialState)
   
-export const Container: React.FC = (props) => {
+export const PageContainer: React.FC<any> = (props) => {
+    const { basename, redirectPaths } = props 
     return (
         <React.Suspense fallback={null}>
             <Provider store={store}>
-                <AppContainer>
-                    <PageRouter>{props.children}</PageRouter>
+                <AppContainer basename={basename}>
+                    <PageRouter redirectPaths={redirectPaths}>
+                        {props.children}
+                    </PageRouter>
                 </AppContainer>
             </Provider>
         </React.Suspense>

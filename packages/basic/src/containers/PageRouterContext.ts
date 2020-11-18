@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { createReducer, IReducerMap } from 'react-dom-basic-kit'
+import { createReducer, IReducerMap } from '@react-kits/dom'
 
 type IPageState = {
   showHeader: boolean

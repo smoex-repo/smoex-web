@@ -7,7 +7,7 @@ import {
   useModalClose,
   transformStyles,
   Modal,
-} from 'react-dom-basic-kit'
+} from '@react-kits/dom'
 
 const cx = transformStyles(styles)
 

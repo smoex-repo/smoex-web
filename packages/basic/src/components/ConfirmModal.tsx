@@ -2,14 +2,11 @@ import * as React from 'react'
 import styles from './styles/Modal.module.scss'
 import {
   enhancePopupComponent,
-  usePopupShown,
   Modal,
-} from 'react-dom-basic-kit'
-import {
   useModalStatus,
   useModalClose,
   transformStyles,
-} from 'react-dom-basic-kit'
+} from '@react-kits/dom'
 
 const cx = transformStyles(styles)
 
